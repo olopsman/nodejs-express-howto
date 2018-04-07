@@ -82,7 +82,7 @@ app.get('*', function(req, res, next){
 });
 
 // Home route
-app.get('/', function(req, res){
+app.get('/',  function(req, res){
   Article.find({}, function(err, articles) {
     if(err) {
       console.log(err);
@@ -95,12 +95,6 @@ app.get('/', function(req, res){
   });
 });
 
-// Add route
-app.get('/articles/add', function(req, res) {
-  res.render('add_articles', {
-    title : 'Add article'
-  });
-});
 
 let articles = require('./routes/articles');
 let users = require('./routes/users');
